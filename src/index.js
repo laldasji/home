@@ -66,3 +66,16 @@ copyEmail.addEventListener('click', async () => {
         console.error('Failed to copy: ', err);
     }
 })
+
+const gridContainer = document.querySelector('.gridContainer');
+const projectScrollBar = document.querySelector('.projectScrollBar');
+
+// Event listener for scrolling
+gridContainer.addEventListener('scroll', () => {
+    // Calculate the percentage of content scrolled
+    const scrollableHeight = gridContainer.scrollHeight - gridContainer.clientHeight;
+    const scrollPercentage = gridContainer.scrollTop / scrollableHeight;
+
+    // Update the width of the custom scrollbar
+    projectScrollBar.style.width = `${scrollPercentage * 100}%`;
+});
