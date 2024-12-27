@@ -1,5 +1,6 @@
 import './typography.css'
 import "./style.css"
+import { loadLeetcodeInfo } from './fetch_coding_rating';
 
 const front = document.querySelector('#front');
 const cube = document.querySelector('#cube');
@@ -73,9 +74,11 @@ const projectScrollBar = document.querySelector('.projectScrollBar');
 // Event listener for scrolling
 gridContainer.addEventListener('scroll', () => {
     // Calculate the percentage of content scrolled
-    const scrollableHeight = gridContainer.scrollHeight - gridContainer.clientHeight;
-    const scrollPercentage = gridContainer.scrollTop / scrollableHeight;
+    const scrollableHeight = gridContainer.scrollHeight - gridContainer.clientHeight; // isolate the length of the scroll
+    const scrollPercentage = gridContainer.scrollTop / scrollableHeight; // total scrolled / length of scroll
 
     // Update the width of the custom scrollbar
     projectScrollBar.style.width = `${scrollPercentage * 100}%`;
 });
+
+loadLeetcodeInfo();
