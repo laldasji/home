@@ -428,9 +428,93 @@ body {
 #down {
     background-color: var(--confused-purple);
     transform: translateY(50%) rotateX(90deg);
+    display: grid;
+    grid-template-rows: 5rem calc(100% - 5rem);
+    .scrollable {
+        height: 100%;
+        overflow: scroll;
+        scrollbar-width: none;
+    }
+}
+#downwrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    .placards {
+        background-color: rgb(226, 226, 226, 0.5);
+        box-shadow: 0 0 10px rgb(128, 128, 128);
+        transition-duration: 0.5s;
+        border-radius: 1rem;
+        &:hover {
+            box-shadow: 0 0 15px rgb(88, 88, 88);
+        }
+    }
+    #youtubeVideoSection {
+        display: grid;
+        width: 90%;
+        margin: 2.5%;
+        padding: 2.5%;
+        grid-template-rows: 5rem 5rem auto;
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        iframe {
+            place-self: center;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 2rem;
+            box-shadow: 0 0 5px 0 rgb(128, 128, 128);
+            transition-duration: 0.5s;
+            &:hover {
+                box-shadow: 0 0 15px 0 rgb(128, 128, 128);
+            }
+        }
+    }
+    #lameJokeSection {
+        display: grid;
+        grid-template-rows: 5rem auto;
+        width: 90%;
+        margin: 2.5%;
+        padding: 2.5%;
+        grid-column: 2 / 3;
+        text-align: center;
+        place-items: center;
+        h2 {
+            text-decoration: underline;
+            -webkit-text-stroke: 2px black;
+        }
+    }
+    #somethingInteresting {
+        background-image: url('./yellow-warning-ribbons.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        object-fit: cover;
+        text-align: center;
+        width: 90%;
+        margin: 2.5%;
+        padding: 2.5%;
+        grid-column: 2 / 3;
+        color: white;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2 {
+            -webkit-text-stroke: 2px white;
+            letter-spacing: 0.1rem;
+            background-color: black;
+            padding: 1rem;
+        }
+    }
 }
 
 @media (max-width: 768px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
     #frontwrapper {
         grid-template-columns: 1fr;
         overflow: scroll;
@@ -494,6 +578,25 @@ body {
             .contestTitles {
                 margin-bottom: 1rem;
             }
+        }
+    }
+    #downwrapper {
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+
+        #youtubeVideoSection {
+            width: fit-content;
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+        #lameJokeSection {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+        #somethingInteresting {
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
         }
     }
 }

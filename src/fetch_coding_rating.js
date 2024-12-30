@@ -28,10 +28,10 @@ function displayError() {
     const right = document.querySelector('#right');
     const newElement = document.createElement('div');
     newElement.classList.add('errorAlert');
-    newElement.innerHTML = `<h1>Oops! Seems like the API has had a bit too many requests from this IP!
+    newElement.innerHTML = `<h1>Oops! Seems like the API has had a bit too many requests!
                             <br>
                             <br>
-                            You can try visiting <a href="https://leetcode.com/u/laldasji" target="_blank">My Leetcode Profile</a>
+                            You can still visit <a href="https://leetcode.com/u/laldasji" target="_blank">My Leetcode Profile</a>
                             </h1>`;
     right.appendChild(newElement);
 }
