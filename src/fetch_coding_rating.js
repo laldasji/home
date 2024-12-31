@@ -107,7 +107,7 @@ async function loadLeetcodeInfo() {
     contestPercentage.innerHTML = `Contest Top %:<br><b>${rankingProgress.contestTopPercentage}</b>%`;
     globalRank.innerHTML = `Global Ranking:<br><b>${rankingProgress.contestGlobalRanking}</b> / ${rankingProgress.totalParticipants}`;
 
-    setTimeout(() => {removeLoadingAnimation()}, 500);
+    setTimeout(() => {removeLoadingAnimation()}, 250);
 }
 
 export { loadLeetcodeInfo };
