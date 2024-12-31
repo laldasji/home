@@ -1,4 +1,4 @@
-const actualAPI = true ? `https://alfa-leetcode-api.onrender.com/` : `http://localhost:3000/`
+const actualAPI = false ? `https://alfa-leetcode-api.onrender.com/` : `http://localhost:3000/`
 
 const leetcodeContestQuery = `laldasji/contest`;
 const leetcodeQuestionsQuery = `userProfile/laldasji`;
@@ -101,11 +101,11 @@ async function loadLeetcodeInfo() {
     const contestPercentage = document.querySelector('#contestPercentage')
     const globalRank = document.querySelector('#globalRank')
 
-    contestRating.innerHTML = `Contest Rating:<br>${(rankingProgress.contestRating).toFixed(0)}`;
-    contestsAttended.innerHTML = `Contests Attended:<br>${rankingProgress.contestAttend}`;
-    contestRank.innerHTML = `Last Contest Rank:<br>${rankingProgress.contestParticipation[rankingProgress.contestParticipation.length - 1].ranking}`
-    contestPercentage.innerHTML = `Contest Top %:<br>${rankingProgress.contestTopPercentage}%`;
-    globalRank.innerHTML = `Global Ranking:<br>${rankingProgress.contestGlobalRanking} / ${rankingProgress.totalParticipants}`;
+    contestRating.innerHTML = `Contest Rating:<br><b>${(rankingProgress.contestRating).toFixed(0)}</b>`;
+    contestsAttended.innerHTML = `Contests Attended:<br><b>${rankingProgress.contestAttend}</b>`;
+    contestRank.innerHTML = `Last Ranking:<br><b>${rankingProgress.contestParticipation[rankingProgress.contestParticipation.length - 1].ranking}</b>`
+    contestPercentage.innerHTML = `Contest Top %:<br><b>${rankingProgress.contestTopPercentage}</b>%`;
+    globalRank.innerHTML = `Global Ranking:<br><b>${rankingProgress.contestGlobalRanking}</b> / ${rankingProgress.totalParticipants}`;
 
     setTimeout(() => {removeLoadingAnimation()}, 500);
 }
