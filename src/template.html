@@ -4,6 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LalDasJi</title>
+    <link rel="stylesheet" href="typography.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            height: 100dvh;
+            pointer-events: none;
+            display: grid;
+            overflow: hidden;
+            perspective: 2500px;
+            scrollbar-width: none;
+        }
+        #cube {
+            pointer-events: none;
+            position: fixed;
+            display: grid;
+            position: relative;
+            width: var(--width);
+            height: var(--height);
+            place-self: center;
+            transform-style: preserve-3d;
+            transition-property: transform;
+            transition-duration: 0.75s;
+            transition-timing-function: ease-in-out;
+        }
+        .face {
+            width: var(--width);
+            height: var(--height);
+            position: absolute;
+            display: grid;
+            place-items: center;
+            border: 1px solid black;
+            transition-duration: 1s;
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body class="hide">
     <div id="cube">

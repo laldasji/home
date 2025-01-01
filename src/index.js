@@ -39,45 +39,49 @@ function goRight() {
 }
 
 function addNavigators(sectionElement) {
-    const upArrow = document.createElement('span');
-    const downArrow = document.createElement('span');
-    const leftArrow = document.createElement('span');
-    const rightArrow = document.createElement('span');
+    if (sectionElement.id != 'up') {
+        const upArrow = document.createElement('span');
+        upArrow.classList.add('navigatorButtons');
+        const img1 = document.createElement('img');
+        img1.src = arrow;
+        upArrow.appendChild(img1);
+        upArrow.id = 'upArrowNavigator';
+        upArrow.addEventListener('click', goUp);
+        sectionElement.appendChild(upArrow);
+    }
 
-    upArrow.classList.add('navigatorButtons');
-    downArrow.classList.add('navigatorButtons');
-    leftArrow.classList.add('navigatorButtons');
-    rightArrow.classList.add('navigatorButtons');
+    if (sectionElement.id != 'down') {
+        const downArrow = document.createElement('span');
+        downArrow.classList.add('navigatorButtons');
+        const img2 = document.createElement('img');
+        img2.src = arrow;
+        downArrow.appendChild(img2);
+        downArrow.id = 'downArrowNavigator';
+        downArrow.addEventListener('click', goDown);
+        sectionElement.appendChild(downArrow);
+    }
 
-    const img1 = document.createElement('img');
-    const img2 = document.createElement('img');
-    const img3 = document.createElement('img');
-    const img4 = document.createElement('img');
+    if (sectionElement.id != 'left') {
+        const leftArrow = document.createElement('span');
+        leftArrow.classList.add('navigatorButtons');
+        const img3 = document.createElement('img');
+        img3.src = arrow;
+        leftArrow.appendChild(img3);
+        leftArrow.id = 'leftArrowNavigator';
+        leftArrow.addEventListener('click', goLeft);
+        sectionElement.appendChild(leftArrow);
+    }
 
-    img1.src = arrow;
-    img2.src = arrow;
-    img3.src = arrow;
-    img4.src = arrow;
-
-    upArrow.appendChild(img1);
-    downArrow.appendChild(img2);
-    leftArrow.appendChild(img3);
-    rightArrow.appendChild(img4);
-
-    upArrow.id = 'upArrowNavigator';
-    downArrow.id = 'downArrowNavigator';
-    leftArrow.id = 'leftArrowNavigator';
-    rightArrow.id = 'rightArrowNavigator';
-
-    upArrow.addEventListener('click', goUp);
-    downArrow.addEventListener('click', goDown);
-    leftArrow.addEventListener('click', goLeft);
-    rightArrow.addEventListener('click', goRight);
-
-    sectionElement.appendChild(upArrow);
-    sectionElement.appendChild(downArrow);
-    sectionElement.appendChild(leftArrow);
-    sectionElement.appendChild(rightArrow);
+    if (sectionElement.id != 'right') {
+        const rightArrow = document.createElement('span');
+        rightArrow.classList.add('navigatorButtons');
+        const img4 = document.createElement('img');
+        img4.src = arrow;
+        rightArrow.appendChild(img4);
+        rightArrow.id = 'rightArrowNavigator';
+        rightArrow.addEventListener('click', goRight);
+        sectionElement.appendChild(rightArrow);
+    }
 }
 
 function removeNavigators(sectionElement) {
@@ -148,15 +152,19 @@ copyEmail.addEventListener('click', async () => {
     }
 })
 
-const gridContainer = document.querySelector('.gridContainer');
-const projectScrollBar = document.querySelector('.projectScrollBar');
+setTimeout(() => {
+    const gridContainer = document.querySelector('.gridContainer');
+    const projectScrollBar = document.querySelector('.projectScrollBar');
 
-gridContainer.addEventListener('scroll', () => {
-    const scrollableHeight = gridContainer.scrollHeight - gridContainer.clientHeight; // isolate the length of the scroll
-    const scrollPercentage = gridContainer.scrollTop / scrollableHeight; // total scrolled / length of scroll
+    gridContainer.addEventListener('scroll', () => {
+        const scrollableHeight = gridContainer.scrollHeight - gridContainer.clientHeight; // isolate the length of the scroll
+        const scrollPercentage = gridContainer.scrollTop / scrollableHeight; // total scrolled / length of scroll
 
     // Update the width of the custom scrollbar
-    projectScrollBar.style.width = `${scrollPercentage * 100}%`;
-});
+        projectScrollBar.style.width = `${scrollPercentage * 100}%`;
+    });
+}, 0);
 
-loadLeetcodeInfo();
+setTimeout(() => {
+    loadLeetcodeInfo()
+}, 500);
