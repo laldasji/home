@@ -46,7 +46,9 @@ function addNavigators(sectionElement) {
         img1.src = arrow;
         upArrow.appendChild(img1);
         upArrow.id = 'upArrowNavigator';
-        upArrow.addEventListener('click', goUp);
+        setTimeout(() => {
+            upArrow.addEventListener('click', goUp);
+        }, 2000)
         sectionElement.appendChild(upArrow);
     }
 
@@ -57,7 +59,9 @@ function addNavigators(sectionElement) {
         img2.src = arrow;
         downArrow.appendChild(img2);
         downArrow.id = 'downArrowNavigator';
-        downArrow.addEventListener('click', goDown);
+        setTimeout(() => {
+            downArrow.addEventListener('click', goDown);
+        }, 2000)
         sectionElement.appendChild(downArrow);
     }
 
@@ -68,7 +72,9 @@ function addNavigators(sectionElement) {
         img3.src = arrow;
         leftArrow.appendChild(img3);
         leftArrow.id = 'leftArrowNavigator';
-        leftArrow.addEventListener('click', goLeft);
+        setTimeout(() => {
+            leftArrow.addEventListener('click', goLeft);
+        }, 2000)
         sectionElement.appendChild(leftArrow);
     }
 
@@ -79,7 +85,9 @@ function addNavigators(sectionElement) {
         img4.src = arrow;
         rightArrow.appendChild(img4);
         rightArrow.id = 'rightArrowNavigator';
-        rightArrow.addEventListener('click', goRight);
+        setTimeout(() => {
+            rightArrow.addEventListener('click', goRight);
+        }, 2000)
         sectionElement.appendChild(rightArrow);
     }
 }
@@ -124,22 +132,6 @@ function transformDisplay() {
         displaySection(down, 'rotate-down');
     }
 }
-
-window.addEventListener('keydown', (event) => {
-    if (event.key == 'ArrowUp') {
-        goUp();
-    }
-    else if (event.key == 'ArrowDown') {
-        goDown();
-    }
-    else if (event.key == 'ArrowLeft') {
-        goLeft();
-    }
-    else if (event.key == 'ArrowRight') {
-        goRight();
-    }
-    transformDisplay();
-})
 
 const copyEmail = document.querySelector('#copyEmail');
 copyEmail.addEventListener('click', async () => {
