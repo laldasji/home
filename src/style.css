@@ -462,7 +462,12 @@ html {
     .scrollable {
         height: 100%;
         overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        touch-action: auto;
         scrollbar-width: none;
+        position: relative;
+        transform: none !important;
+        backface-visibility: hidden;
     }
     #upwrapper {
         height: 100%;
@@ -532,6 +537,11 @@ html {
     .scrollable {
         height: 100%;
         overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+        transform: none !important;
+        backface-visibility: hidden;
+        touch-action: auto;
         scrollbar-width: none;
     }
 }
@@ -613,6 +623,11 @@ html {
     #frontwrapper {
         grid-template-columns: 1fr;
         overflow: scroll;
+        position: relative;
+        transform: none !important;
+        backface-visibility: hidden;
+        -webkit-overflow-scrolling: touch;
+        touch-action: auto;
         scrollbar-width: none;
         grid-template-rows: auto auto;
 
