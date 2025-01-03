@@ -104,12 +104,17 @@ function removeNavigators(sectionElement) {
 let element = front;
 let currentFace = [0, 0];
 front.classList.add('visible');
+front.classList.add('clickable');
 addNavigators(front);
 
 
 function displaySection(sectionElement, action) {
     // previous element ko invisible karo, remove falana dhimkana
     element.classList.remove('visible');
+    const temp = element;
+    setTimeout(() => {
+        temp.classList.remove('clickable');
+    }, 1000);
     removeNavigators(element);
 
     // cube ko rotate karo
@@ -117,6 +122,7 @@ function displaySection(sectionElement, action) {
 
     // new element visible karo, add falana dhimkana
     sectionElement.classList.add('visible');
+    sectionElement.classList.add('clickable');
     addNavigators(sectionElement);
     element = sectionElement;
 }
