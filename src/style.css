@@ -692,20 +692,23 @@ html {
     #up {
         #upwrapper {
             grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr;
             height: auto;
         }
         #skillContainer {
-            margin-top: 2.5%;
             grid-column: 1 / 2;
             grid-row: 1 / 2;
             width: 90%;
-            height: fit-content;
+            height: min-content;
         }
         #empty {
             width: 90%;
+            height: min-content;
             grid-column: 1 / 2;
             grid-row: 2 / 3;
+        }
+        .polaroid {
+            margin-top: 2.5%;
+            margin-bottom: 2.5%;
         }
     }
 }

@@ -1,4 +1,4 @@
-const actualAPI = false ? `https://alfa-leetcode-api.onrender.com/` : `http://localhost:3000/`
+const actualAPI = true ? `https://alfa-leetcode-api.onrender.com/` : `http://localhost:3000/`
 
 const leetcodeContestQuery = `laldasji/contest`;
 const leetcodeQuestionsQuery = `userProfile/laldasji`;
