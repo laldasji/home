@@ -161,6 +161,7 @@ html {
 
     .info {
         overflow: scroll;
+        -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         height: 90%;
         width: 90%;
@@ -226,6 +227,7 @@ html {
         height: auto;
         scrollbar-width: none;
         overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
         display: grid;
         place-items: center;
     }
@@ -334,6 +336,7 @@ html {
         height: auto;
         scrollbar-width: none;
         overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
         display: grid;
         place-items: center;
     }
@@ -624,8 +627,6 @@ html {
         grid-template-columns: 1fr;
         overflow: scroll;
         position: relative;
-        transform: none !important;
-        backface-visibility: hidden;
         -webkit-overflow-scrolling: touch;
         touch-action: auto;
         scrollbar-width: none;
