@@ -139,10 +139,6 @@ html {
     animation-timing-function: linear;
 }
 
-.clickable {
-    display: grid;
-}
-
 #front {
     transform: translateZ(calc((var(--height) * -1) / 2));
     display: grid;

@@ -104,7 +104,6 @@ function removeNavigators(sectionElement) {
 let element = front;
 let currentFace = [0, 0];
 front.classList.add('visible');
-front.classList.add('clickable');
 addNavigators(front);
 
 
