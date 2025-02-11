@@ -93,6 +93,7 @@ async function loadLeetcodeInfo() {
             rank += ',';
     }
     rank = rank.split('').reverse().join('');
+    if (rank[0] == ',') rank = rank.substring(1);
     leetcodeRank.innerHTML = `<h1>Ranking:<br>${rank}</h1>`;
 
     const contestRating = document.querySelector('#contestRating')
